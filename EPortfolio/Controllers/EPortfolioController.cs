@@ -16,7 +16,7 @@ namespace EPortfolio.Controllers
         }
 
         // GET: api/EPortfolio/5
-        public string Get(int id)
+        public string Get(int ids)
         {
             return "value";
         }
