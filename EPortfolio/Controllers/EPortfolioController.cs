@@ -4,11 +4,26 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using MongoDB.Driver;
 
 namespace EPortfolio.Controllers
 {
+    [RoutePrefix("api")]
     public class EPortfolioController : ApiController
     {
+
+
+        //Register API
+        [Route("register")]
+        [HttpPost]
+        public IHttpActionResult RegisterUser()
+        {
+            return Ok();
+        }
+
+
+
+
         // GET: api/EPortfolio
         public IEnumerable<string> Get()
         {
