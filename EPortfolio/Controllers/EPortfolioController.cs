@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using EPortfolio.Models;
 using MongoDB.Driver;
 
 namespace EPortfolio.Controllers
@@ -16,39 +17,18 @@ namespace EPortfolio.Controllers
         //Register API
         [Route("register")]
         [HttpPost]
-        public IHttpActionResult RegisterUser()
+        public IHttpActionResult RegisterUser([FromBody] RegisterUser user)
         {
-            return Ok();
-        }
-
-
-
-
-        // GET: api/EPortfolio
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET: api/EPortfolio/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST: api/EPortfolio
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT: api/EPortfolio/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/EPortfolio/5
-        public void Delete(int id)
-        {
+            try
+            {
+                
+                return Ok();
+            }
+            catch(Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+            
         }
     }
 }
